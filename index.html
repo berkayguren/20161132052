@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html  lang="tr">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - Ödev Dağıtım Portalı</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/site.css" rel="stylesheet">
+<script src="js/jquery-1.10.2.js"></script>
+    <script src="js/modernizr-2.6.2.js"></script>
+
+
+</head>
+<body bgcolor="" style="">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Ödev Dağıtım Portalı</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="ogrencilistesi.html">Öğrenciler</a></li>
+                    <li><a href="Odevler.html">Ödevler</a></li>
+
+                    
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="giris.html">Giriş Yap</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        
+
+
+<div class="jumbotron" style="margin-bottom: 0;padding-bottom: 0;padding-top: 10px;">
+    <h1 style="text-align:center; "">Ödev Dağıtım Portalı</h1>
+</div>
+
+<div class="row">
+<style>
+.row-ogr{
+        padding: 5px 0;
+    float: left;
+    margin-bottom: 5px;
+}
+    .row-ogr:nth-child(2n) {
+    background-color: #444;
+    color: #fff;
+}
+</style>            
+ <div class="container" style="background-color: #fff;padding: 10px;margin: 10px 0; font-size: 1.7rem;">
+            <div class="row" style="padding: 5px;margin-bottom: 10px;background-color: #444;color: #fff;">
+                <div class="col-md-4">Öğrenci No</div>
+                <div class="col-md-4">Öğrenci Adı</div>
+                <div class="col-md-4">Ödev Tanımı </div>
+            </div>
+            <div class="row" id="odevler">
+                <div class="col-md-12">
+                <div class="col-md-3">20161132001</div>
+                <div class="col-md-3">Ali Yaşar</div>
+                <div class="col-md-3">1</div>
+                <div class="col-md-3">Soru Modulü</div>  
+                </div>
+            </div>
+        </div>
+        <script>    
+            $(document).ready(function () {
+                var odev=["Soru Modulü","Ödev Dağıtım Modülü","Emlak Takip Modülü","E-Ticaret Modülü","Sepet Ekle Modülü","Emlak Takip Modülü","Veri Tabanı ile Üye Sepet","Eğitim Portalı","Dosya Yönetim Panel"];
+                var ogrenci=["Ali Yaşar","Mustafa Şahin","Ahmet Yücel","Raşit Sönmez","Yaşar Korkmaz","Mülayim Kırca","Doğan Can","Ayşe Genç","Burak Ünal","Berkin Aydın"];
+                var ogrenciid=20161132001;
+              
+                var html="";
+                for (var i = 0; i < ogrenci.length; i++) {
+                    var a = Math.floor(Math.random()*odev.length);
+                    html+='<div class="col-md-12 row-ogr">'+
+                        '<div class="col-md-4">'+(ogrenciid+i)+'</div>'+
+                        '<div class="col-md-4">'+ogrenci[i]+'</div>'+
+                        '<div class="col-md-4">'+odev[a]+'</div>'+  
+                        '</div>';
+                }
+                $('#odevler').html(html);
+            });
+        </script>
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright Ödev Dağıtım Portalı</p>
+      </div>
+    </footer>
+
+
+</body></html>
